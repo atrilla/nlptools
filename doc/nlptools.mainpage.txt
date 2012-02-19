@@ -1,0 +1,31 @@
+/**
+ * @mainpage nlpTools - Natural Language Processing Toolkit for PHP
+ * 
+ * @par General concept
+ * Text processing framework to analyse Natural Language by performing
+ * operations and tasks on corpus data. Hence, this approach focuses on 
+ * the statistical track of Natural Language Processing (NLP).
+ *
+ * @par Code
+ * Written in the PHP programming language for its suitability to 
+ * process text on the web (i.e., by definition, the Hypertext 
+ * Preprocessor).
+ *
+ * Loosely coupled modular design, with orthogonality, reusability and 
+ * extensibility in mind, to not compromise its future growth.
+ *
+ * Specific preconditions on parameter types are enforced with Type 
+ * Hinting on objects and arrays, and casts to string, int, bool or 
+ * float, on primitive types. Therefore, it is of utmost importance to 
+ * consider the parameter descriptions in the documentation and to follow 
+ * the contracts defined in the interface prototypes. 
+ *
+ * Other preconditions unrelated to type checking are asserted.
+ *
+ * The rationale for using exceptions is to throw them only for 
+ * Exceptional Problems. The strict following of the contracts should 
+ * suffice to operate successfully. 
+ * 
+ * @author Alexandre Trilla (atrilla)
+ * @version 0.0.1
+ */ 
