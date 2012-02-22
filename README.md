@@ -13,6 +13,7 @@ Related fields
 
 * Computational Linguistics (CL)
 * Corpus Linguistics
+* Information Retrieval
 * Artificial Intelligence (AI), Machine Learning (ML) and Pattern 
 Recognition
 

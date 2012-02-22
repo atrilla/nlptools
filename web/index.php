@@ -13,6 +13,7 @@ the statistical track of Natural Language Processing (NLP).</p>
 <ul>
 <li>Computational Linguistics (CL)</li>
 <li>Corpus Linguistics</li>
+<li>Information Retrieval</li>
 <li>Artificial Intelligence (AI), Machine Learning (ML) and Pattern 
 Recognition</li>
 </ul>
