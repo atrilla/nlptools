@@ -1,3 +1,12 @@
+22-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+
+* core/util/feeding/FeedRSS.php (setMaxItems): added function. To be
+    documented.
+
+* web/topicid.php: creation. Analysis based on RSS description (too
+    slow). Links appear there also.
+
+
 19-Feb-2012  Alexandre Trilla  <alex@atrilla.net
 
 * core/classification/MultinomialNaiveBayes.php (train, classify): 

@@ -73,14 +73,18 @@ class FeedRSS implements Feeder {
 		        }
 	            $itemRSS = array ( 
 	                "title" => $node->getElementsByTagName("title")->item(0)->nodeValue,
-	                // "desc" => $node->getElementsByTagName("description")->item(0)->nodeValue,
+	                "desc" => $node->getElementsByTagName("description")->item(0)->nodeValue,
 	                "link" => $node->getElementsByTagName("link")->item(0)->nodeValue,
-	                // "date" => $node->getElementsByTagName("pubDate")->item(0)->nodeValue
+	                "date" => $node->getElementsByTagName("pubDate")->item(0)->nodeValue
 	                );
 	            array_push($arrFeeds, $itemRSS);
             }
         }
         return $arrFeeds;
+    }
+
+    public function setMaxItems($maxits) {
+        $this->maxItems = $maxits;
     }
 }
 

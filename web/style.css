@@ -24,6 +24,10 @@ p.pos {
     padding-left: 10px;
 }
 
+p.category {
+    padding-left: 20px;
+}
+
 body { 
     font-family: Helvetica, sans-serif;
     font-size: 16px;
