@@ -1,3 +1,10 @@
+26-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+
+* web/topicid.php: classification based on title and description
+    trash removed with regexp.
+* web/appdemos.php
+
+
 22-Feb-2012  Alexandre Trilla  <alex@atrilla.net
 
 * core/util/feeding/FeedRSS.php (setMaxItems): added function. To be

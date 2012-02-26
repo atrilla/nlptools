@@ -83,7 +83,18 @@ class FeedRSS implements Feeder {
         return $arrFeeds;
     }
 
+    /**
+     * @brief Sets the maximum number of items to retrieve.
+     *
+     * @param maxits The maximum number of items to retrieve.
+     *
+     * @pre The maximum number of items must be an integer number
+     *     greater than zero.
+     * @post The maximum number of items to retrieve is set.
+     */
     public function setMaxItems($maxits) {
+        $maxits = (int)$maxits;
+        assert($maxits > 0);
         $this->maxItems = $maxits;
     }
 }
