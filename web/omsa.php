@@ -19,8 +19,8 @@ sentiment/feeling.</p>
 <p>In order to produce this system, a Text Classification technique
 has to be adapted to a given application domain. In this demo, the
 <a href='http://nlp.cs.swarthmore.edu/semeval/'>SemEval-2007 dataset</a>
-is of use for training the classifier, and the
-learnt model is then applied to processing world news headlines from 
+is of use for training the classifier, and the learnt model is then 
+applied to processing similar world news headlines from 
 The Washington Post:</p>
 
 <?php
