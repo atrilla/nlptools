@@ -3,8 +3,9 @@ include(dirname(__FILE__)."/pagemaker.php");
 putHeader("appdemos");
 ?>
 
-<p>Some applications that require the processing of Natural 
-Language in textual form are shown hereunder:
+<p>Solution-centric approach to Natural Language Processing 
+technology. Some applications that require the processing 
+of Natural Language in textual form are shown hereunder:
 <ul>
     <li><a href="omsa.php">Opinion Mining and Sentiment Analysis</a></li>
 </ul>

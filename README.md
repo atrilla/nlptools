@@ -3,7 +3,7 @@ nlpTools - Natural Language Processing Toolkit for PHP
 
 Text processing framework to analyse Natural Language by performing
 operations and tasks on corpus data. Hence, this approach focuses on 
-the statistical track of Natural Language Processing (NLP).
+the statistical/quantitative track of Natural Language Processing (NLP).
 
 Website: [http://nlptools.atrilla.net/](http://nlptools.atrilla.net/)
 

@@ -418,8 +418,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="314.98493"
-     inkscape:cy="895.16145"
+     inkscape:cx="344.42637"
+     inkscape:cy="875.33061"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -447,7 +447,8 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3685"
+       id="g2907"
+       inkscape:export-filename="/myxfiles/devel/nlptools/web/nlptoolslogo.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
       <flowRoot
@@ -475,18 +476,18 @@
              width="317.1879"
              id="rect3072" /></flowRegion><flowPara
            id="flowPara3074">ools</flowPara></flowRoot>      <flowRoot
-         transform="translate(32.714286,-43.571429)"
-         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+         transform="translate(34.714286,-43.571429)"
+         style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;text-anchor:end;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          id="flowRoot3848"
          xml:space="preserve"><flowRegion
            id="flowRegion3850"><rect
-             style="font-size:14px;fill:#333333"
+             style="font-size:14px;text-align:end;text-anchor:end;fill:#333333"
              y="231.6479"
              x="107.14286"
-             height="27.142857"
-             width="226.42857"
+             height="47.857143"
+             width="182.14285"
              id="rect3852" /></flowRegion><flowPara
-           id="flowPara3854">Natural Language Processing</flowPara></flowRoot>      <flowRoot
+           id="flowPara3854">Natural Language</flowPara></flowRoot>      <flowRoot
          transform="translate(114.42858,-77.857142)"
          style="font-size:14px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#333333;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
          id="flowRoot3856"
@@ -505,7 +506,7 @@
       <path
          id="rect3718"
          d="m 312.98435,95.12135 0,17.94784 60.94681,0 0,-5.00095 c -8.68047,-0.60917 -15.47337,-6.13627 -15.6929,-12.94689 l -45.25391,0 z"
-         style="fill:#999999;fill-opacity:1;stroke:#333333;stroke-width:2.50000000000000000;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+         style="fill:#999999;fill-opacity:1;stroke:#333333;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     </g>
   </g>
 </svg>

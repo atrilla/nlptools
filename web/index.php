@@ -6,7 +6,8 @@ putHeader("about");
 
 <p>Text processing framework to analyse Natural Language by performing
 operations and tasks on corpus data. Hence, this approach focuses on 
-the statistical track of Natural Language Processing (NLP).</p>
+the statistical/quantitative track of Natural Language Processing 
+(NLP).</p>
 
 <h2>Related fields</h2>
 
