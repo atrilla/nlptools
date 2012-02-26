@@ -26,11 +26,12 @@ $feeder = new FeedRSS();
 $aFeeds = 
     $feeder->getFood("http://feeds.reuters.com/reuters/MostRead?format=xml");
 foreach($aFeeds as $feed) {
-    $lab = $classifier->classify($feed["desc"]);
-    echo "<p><font color='#808080'>".$lab."</font></p>";
-    echo "<p class='category'><b>".$feed["title"]."</b>".
-        " - <a href='".$feed["link"]."'>Read more</a><br />".
-        $feed["desc"]."</p>";
+    $lab = $classifier->classify($feed["title"]);
+    echo "<p><font color='#808080'>Topic: ".$lab."</font><br />";
+    echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>"
+        .$feed["title"]."</b>"." - <a href='".$feed["link"].
+        "'>Read more</a><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".
+        preg_replace("/<.+>/", "", $feed["desc"])."</p>";
 }
 
 ?>
