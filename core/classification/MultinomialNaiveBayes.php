@@ -176,7 +176,12 @@ class MultinomialNaiveBayes implements Classifier {
      * @see Classifier#setDatabase($name)
      */
     public function setDatabase($name) {
-        $this->theDBName = (string)$name;
+        $name = (string)$name;
+        if (getPrefixID() != "") {
+            $this->theDBName = getPrefixID()."_".$name;
+        } else {
+            $this->theDBName = $name;
+        }
     }
 
     /**

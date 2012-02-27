@@ -1,3 +1,9 @@
+27-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+
+* core/util/dbauth/DBAuthManager.php (getPrefixID): DB ID.
+* core/classification/MultinomialNaiveBayes.php (setDatabase)
+
+
 26-Feb-2012  Alexandre Trilla  <alex@atrilla.net
 
 * web/topicid.php: classification based on title and description

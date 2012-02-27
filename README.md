@@ -53,7 +53,7 @@ Coded in the PHP programming language for its suitability to process
 text on the web (i.e., Hypertext Preprocessor).
 
 This README file provides a general description of the purpose of the
-NLP toolkit.
+NLP Toolkit.
 
 For any comment or suggestion of any kind, please contact 
 [Alexandre Trilla](mailto:alex@atrilla.net).

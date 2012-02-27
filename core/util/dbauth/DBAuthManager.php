@@ -46,4 +46,14 @@ function getConnection() {
     return "mysql://root:@localhost/";
 }
 
+/**
+ * @brief Provides the DB prefix ID.
+ * @returns The prefix ID.
+ *
+ * @author Alexandre Trilla (atrilla)
+ */
+function getPrefixID() {
+    return "";
+}
+
 ?>
