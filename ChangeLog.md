@@ -1,3 +1,21 @@
+10-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+
+* api/index.php: getMethod brackets.
+
+* api/RestUtils.php: form encoded data used to obtain array.
+
+
+08-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+
+* api/index.php: creation.
+
+
+07-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+
+* api/RestUtils.php: creation.
+* api/RestRequest.php: creation.
+
+
 27-Feb-2012  Alexandre Trilla  <alex@atrilla.net
 
 * core/util/dbauth/DBAuthManager.php (getPrefixID): DB ID.
