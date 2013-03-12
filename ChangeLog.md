@@ -1,35 +1,41 @@
-10-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+12-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* api/index.php: auth issues.
+* api/RestUtils.php: 401 message.
+
+
+10-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: getMethod brackets.
 
 * api/RestUtils.php: form encoded data used to obtain array.
 
 
-08-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+08-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: creation.
 
 
-07-Mar-2013  Alexandre Trilla  <alex@atrilla.net
+07-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/RestUtils.php: creation.
 * api/RestRequest.php: creation.
 
 
-27-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+27-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * core/util/dbauth/DBAuthManager.php (getPrefixID): DB ID.
 * core/classification/MultinomialNaiveBayes.php (setDatabase)
 
 
-26-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+26-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * web/topicid.php: classification based on title and description
     trash removed with regexp.
 * web/appdemos.php
 
 
-22-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+22-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * core/util/feeding/FeedRSS.php (setMaxItems): added function. To be
     documented.
@@ -38,7 +44,7 @@
     slow). Links appear there also.
 
 
-19-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+19-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * core/classification/MultinomialNaiveBayes.php (train, classify): 
     vocabSize should be the vocabulary size from the whole dataset,
@@ -46,7 +52,7 @@
 * core/classification/Classifier.php
 
 
-18-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+18-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * core/classification/MultinomialNaiveBayes.php (classify):
     exception throwing (new).
@@ -54,7 +60,7 @@
 * core/util/feeding/FeedRSS (getFood): exception throwing (new).
 
 
-17-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+17-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * core/classification: former classification.
 * core/tokenisation: former tokenisation.
@@ -68,7 +74,7 @@
     marks.
 
 
-16-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+16-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * util/training/ClassifierTrainer.php: creation.
 
@@ -86,6 +92,6 @@
 * classification/MultinomialNaiveBayes.php: creation.
 
 
-15-Feb-2012  Alexandre Trilla  <alex@atrilla.net
+15-Feb-2012  Alexandre Trilla  <alex@atrilla.net>
 
 * classification/Classifier.php: creation. 

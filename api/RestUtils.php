@@ -109,6 +109,9 @@ class RestUtils
 	            case 400:  
 	                $message = 'Please review the API format.';  
 	                break;  
+	            case 401:  
+	                $message = 'I\'m sorry, but you exceeded the query limit to validate NLPTools. I would be very glad to know about your interest in NLPTools and work out a solution with you. If there is anything I can do for you, please don\'t hesitate to drop me a line at alex (at) atrilla.net  --Alex';
+	                break;  
 	        }  
 	  
 	        // servers don't always have a signature turned on (this is an apache directive "ServerSignature On")  
