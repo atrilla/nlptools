@@ -110,7 +110,7 @@ class RestUtils
 	                $message = 'Please review the API format.';  
 	                break;  
 	            case 401:  
-	                $message = 'I\'m sorry, but you exceeded the query limit to validate NLPTools. I would be very glad to know about your interest in NLPTools and work out a solution with you. If there is anything I can do for you, please don\'t hesitate to drop me a line at alex (at) atrilla.net  --Alex';
+	                $message = 'I\'m sorry, but you exceeded the demo query limits to validate NLPTools. I would be very glad to know about your interest in NLPTools and to work out a solution with you. If there is anything I can do for you, please don\'t hesitate to drop me a line at alex (at) atrilla.net  --Alex';
 	                break;  
 	        }  
 	  

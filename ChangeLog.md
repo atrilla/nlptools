@@ -1,3 +1,9 @@
+22-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* api/index.php: handle wrong database. Max char query limit set to 2k 
+    chars.
+
+
 12-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: auth issues.

@@ -46,6 +46,8 @@ $maxHits = 500;
 
 //PERMISSIONS
 $granted  = true;
+
+// Check number of queries
 $callerIP = $_SERVER['REMOTE_ADDR'];
 $db = DB::connect(getConnection().getPrefixID().'_NLPToolsAPI');
 if (DB::isError($db)) {
@@ -70,24 +72,31 @@ if (DB::isError($db)) {
         $db->query("INSERT INTO Users VALUES ( '$callerIP', 1 );");
     }
 }
+
+// Check length of query
 if ($granted) {
     $data = RestUtils::processRequest();
-    switch($data->getMethod())  
-    {
-        case 'post': // right method
-            $serv = $data->getService();
-            $tex = $data->getTextToProc();
-            $classifier = new MultinomialNaiveBayes();
-            if ($serv == 'sentiment_news') {
-                $classifier->setDatabase("semeval07");
-            }
-            $lab = $classifier->classify($tex);
-            $res = array('label' => $lab);
-            RestUtils::sendResponse(200, json_encode($res), 'application/json');
-            break;
-        default: // incorrect method
-            RestUtils::sendResponse(400);
-    }
+    if ((strlen($data->getTextToProc()) > 0) && (strlen($data->getTextToProc()) < 2000)) {
+	    switch($data->getMethod()) {
+	        case 'post': // right method
+	            $serv = $data->getService();
+	            $tex = $data->getTextToProc();
+	            $classifier = new MultinomialNaiveBayes();
+	            if ($serv == 'sentiment_news') {
+	                $classifier->setDatabase("semeval07");
+	                $lab = $classifier->classify($tex);
+	                $res = array('label' => $lab);
+	                RestUtils::sendResponse(200, json_encode($res), 'application/json');
+	            } else {
+	                RestUtils::sendResponse(400);
+	            }
+	            break;
+	        default: // incorrect method
+	            RestUtils::sendResponse(400);
+	    }
+     } else {
+	    RestUtils::sendResponse(401);
+     }
 } else {
     RestUtils::sendResponse(401);
 }
