@@ -98,6 +98,22 @@ interface Classifier {
      * @post The most appropriate category label is delivered.
      */
     public function classify($dataTest);
+
+    /**
+     * @brief Likelihood/relatedness interface.
+     *
+     * @param dataTest The test data, e.g., in textual form.
+     * @param cat The category to be evaluated.
+     * @returns The likelihood score.
+     * @throws Exception if the connection to the working database
+     *     cannot be established.
+     *
+     * @pre The test and category data should be valid strings.
+     * @pre A trained model should be available on the working
+     *     database, i.e., an existing and non-empty database.
+     * @post The similarity score is delivered.
+     */
+    public function likelihood($dataTest, $cat);
 }
 
 ?>

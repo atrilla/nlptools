@@ -40,7 +40,7 @@ require(dirname(__FILE__)."/RestUtils.php");
 include(dirname(__FILE__).
     "/../core/classification/MultinomialNaiveBayes.php");
 include_once("DB.php");
-include_once(dirname(__FILE__)."/../util/dbauth/DBAuthManager.php");
+include_once(dirname(__FILE__)."/../core/util/dbauth/DBAuthManager.php");
 
 $maxHits = 500;
 
@@ -80,12 +80,25 @@ if ($granted) {
 	    switch($data->getMethod()) {
 	        case 'post': // right method
 	            $serv = $data->getService();
-	            $tex = $data->getTextToProc();
-	            $classifier = new MultinomialNaiveBayes();
 	            if ($serv == 'sentiment_news') {
+	            	$tex = $data->getTextToProc();
+	            	$classifier = new MultinomialNaiveBayes();
 	                $classifier->setDatabase("semeval07");
-	                $lab = $classifier->classify($tex);
-	                $res = array('label' => $lab);
+			$pNEG = $classifier->likelihood($tex, "NEG");
+			$pNEU = $classifier->likelihood($tex, "NEU");
+			$pPOS = $classifier->likelihood($tex, "POS");
+			// No need to hit the DB again
+			$lab = "NEG";
+			$score = $pNEG;
+			if ($pNEU > $score) {
+			    $lab = "NEU";
+			    $score = $pNEU;
+			}
+			if ($pPOS > $score) {
+			    $lab = "POS";
+			}
+			$probs = array('NEG' => $pNEG, 'NEU' => $pNEU, 'POS' => $pPOS);
+	                $res = array('likelihood' => $probs, 'label' => $lab);
 	                RestUtils::sendResponse(200, json_encode($res), 'application/json');
 	            } else {
 	                RestUtils::sendResponse(400);

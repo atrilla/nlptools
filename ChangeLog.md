@@ -1,3 +1,16 @@
+25-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* api/index.php: instantiate classifier only if service is OK.
+
+* core/classification/MultinomialNaiveBayes.php (likelihood,
+    classify): log-likelihood procedure and interface.
+* api/index.php
+* core/classification/Classifier.php
+
+* web/api.php: API desc.
+* web/guidelines.php
+
+
 22-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: handle wrong database. Max char query limit set to 2k 

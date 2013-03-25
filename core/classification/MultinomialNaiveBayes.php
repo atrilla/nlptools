@@ -260,6 +260,7 @@ class MultinomialNaiveBayes implements Classifier {
                         $score += log($oovProb);
                     }
                 }
+                $score = exp($score);
                 if ($decision == "indeterminate") {
                     $decision = $cat;
                     $probDecision = $score;
@@ -269,6 +270,39 @@ class MultinomialNaiveBayes implements Classifier {
                 }
             }
             return $decision;
+        }
+    }
+
+    /**
+     * @brief Log-ikelihood (conditional) probability interface
+     *
+     * @see Classifier#likelihood($dataTest, $cat)
+     */
+    public function likelihood($dataTest, $cat) {
+        $db = DB::connect(getConnection().$this->theDBName);
+        if (DB::isError($db)) {
+            throw new Exception("MultinomialNaiveBayes classifier: ".
+                "DB connection error! ".$db->getMessage()."\n");
+        } else {
+            $dataTest = (string)$dataTest;
+            assert(!is_null($db->query("SHOW TABLES;")));
+            $words = $this->theTokeniser->tokenise($dataTest);
+	        $score = 0;
+	        foreach($words as $word) {
+	            $itExists = $db->getOne("SELECT Probability FROM ".
+	                MultinomialNaiveBayes::tabCondName."_$cat".
+	                " WHERE Term = '$word';");
+	            if (!is_null($itExists)) {
+	                $score += log($itExists);
+	            } else {
+	                $oovProb = $db->getOne("SELECT Probability ".
+	                    "FROM ".
+	                    MultinomialNaiveBayes::tabCondName."_$cat".
+	                    " WHERE Term = '".Classifier::OOV."';");
+	                $score += log($oovProb);
+	            }
+	        }
+            return exp($score);
         }
     }
 }

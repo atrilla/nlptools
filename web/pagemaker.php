@@ -47,19 +47,29 @@ function putHeader($menuopt) {
         echo("<li><a href='code.php'>Code</a></li>");
     }
     if ($menuopt == "appdemos") {
-        $menulab = "App demos";
-        echo("<li>App demos</li>");
+        $menulab = "Demos";
+        echo("<li>Demos</li>");
     } else {
-        echo("<li><a href='appdemos.php'>App demos</a></li>");
+        echo("<li><a href='appdemos.php'>Demos</a></li>");
     }
+    if ($menuopt == "api") {
+        $menulab = "API";
+        echo("<li>API</li>");
+    } else {
+        echo("<li><a href='api.php'>API</a></li>");
+    }
+
     echo("
       </ul>
     </div>
     <h1>$menulab</h1>");
 }
 
+
 function putFooter() {
-    echo("<div id=footer>All contents &copy; Alexandre Trilla 2012</div>
+    echo("<div id=footer>All contents &copy; Alexandre Trilla 2012-");
+    echo(date('Y'));
+    echo("</div>
   </body>
 </html>");
 }

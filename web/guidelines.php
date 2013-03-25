@@ -4,7 +4,8 @@ putHeader("guidelines");
 ?>
 
 <p>Please refer to the <a href="../doc/html/">documentation</a> for all
-the usage details.
+the technical details. Refer to the <a href="api.php">API docs</a> for
+a more pragmatic approach to NLPTools.</p>
 
 <h2>Installation</h2>
 <p>The toolkit is deployed by directly copying the core wherever it is 
