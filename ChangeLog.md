@@ -1,3 +1,8 @@
+26-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* api/index.php: prob normalisation wrt the likelihoods.
+
+
 25-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: instantiate classifier only if service is OK.

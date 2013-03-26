@@ -87,6 +87,10 @@ if ($granted) {
 			$pNEG = $classifier->likelihood($tex, "NEG");
 			$pNEU = $classifier->likelihood($tex, "NEU");
 			$pPOS = $classifier->likelihood($tex, "POS");
+            $pTotal = $pNEG + $pNEU + $pPOS;
+            $pNEG = $pNEG / $pTotal;
+            $pNEU = $pNEU / $pTotal;
+            $pPOS = $pPOS / $pTotal;
 			// No need to hit the DB again
 			$lab = "NEG";
 			$score = $pNEG;
