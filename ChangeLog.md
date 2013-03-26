@@ -1,6 +1,12 @@
 26-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
-* api/index.php: prob normalisation wrt the likelihoods.
+* api/index.php: prob normalisation wrt the likelihoods. Force to neutral
+    is text is too long (sentiment wash).
+
+* core/classification/MultinomialNaiveBayes.php (likelihood): log-likelihood
+    is returned.
+
+* web/api.php: new example.
 
 
 25-Mar-2013  Alexandre Trilla  <alex@atrilla.net>

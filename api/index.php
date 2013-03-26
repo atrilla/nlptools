@@ -77,42 +77,47 @@ if (DB::isError($db)) {
 if ($granted) {
     $data = RestUtils::processRequest();
     if ((strlen($data->getTextToProc()) > 0) && (strlen($data->getTextToProc()) < 2000)) {
-	    switch($data->getMethod()) {
-	        case 'post': // right method
-	            $serv = $data->getService();
-	            if ($serv == 'sentiment_news') {
-	            	$tex = $data->getTextToProc();
-	            	$classifier = new MultinomialNaiveBayes();
-	                $classifier->setDatabase("semeval07");
-			$pNEG = $classifier->likelihood($tex, "NEG");
-			$pNEU = $classifier->likelihood($tex, "NEU");
-			$pPOS = $classifier->likelihood($tex, "POS");
-            $pTotal = $pNEG + $pNEU + $pPOS;
-            $pNEG = $pNEG / $pTotal;
-            $pNEU = $pNEU / $pTotal;
-            $pPOS = $pPOS / $pTotal;
-			// No need to hit the DB again
-			$lab = "NEG";
-			$score = $pNEG;
-			if ($pNEU > $score) {
-			    $lab = "NEU";
-			    $score = $pNEU;
-			}
-			if ($pPOS > $score) {
-			    $lab = "POS";
-			}
-			$probs = array('NEG' => $pNEG, 'NEU' => $pNEU, 'POS' => $pPOS);
-	                $res = array('likelihood' => $probs, 'label' => $lab);
-	                RestUtils::sendResponse(200, json_encode($res), 'application/json');
-	            } else {
-	                RestUtils::sendResponse(400);
-	            }
-	            break;
-	        default: // incorrect method
-	            RestUtils::sendResponse(400);
-	    }
+        switch($data->getMethod()) {
+            case 'post': // right method
+                $serv = $data->getService();
+                if ($serv == 'sentiment_news') {
+                    $tex = $data->getTextToProc();
+                    $classifier = new MultinomialNaiveBayes();
+                    $classifier->setDatabase("semeval07");
+		            $pNEG = $classifier->likelihood($tex, "NEG");
+		            $pNEU = $classifier->likelihood($tex, "NEU");
+		            $pPOS = $classifier->likelihood($tex, "POS");
+                    // Too long, force to neutral, sentiment wash
+                    if ($pNEG == false) {
+                        $pNEU = 1;
+                    } else {
+		                $pTotal = $pNEG + $pNEU + $pPOS;
+		                $pNEG = $pNEG / $pTotal;
+		                $pNEU = $pNEU / $pTotal;
+		                $pPOS = $pPOS / $pTotal;
+                    }
+		            // No need to hit the DB again
+		            $lab = "NEG";
+		            $score = $pNEG;
+		            if ($pNEU > $score) {
+		                $lab = "NEU";
+		                $score = $pNEU;
+		            }
+		            if ($pPOS > $score) {
+		                $lab = "POS";
+		            }
+		            $probs = array('NEG' => $pNEG, 'NEU' => $pNEU, 'POS' => $pPOS);
+		                    $res = array('likelihood' => $probs, 'label' => $lab);
+		                    RestUtils::sendResponse(200, json_encode($res), 'application/json');
+                } else {
+                    RestUtils::sendResponse(400);
+                }
+                break;
+            default: // incorrect method
+                RestUtils::sendResponse(400);
+        }
      } else {
-	    RestUtils::sendResponse(401);
+        RestUtils::sendResponse(401);
      }
 } else {
     RestUtils::sendResponse(401);

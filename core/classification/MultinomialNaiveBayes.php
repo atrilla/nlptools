@@ -302,7 +302,7 @@ class MultinomialNaiveBayes implements Classifier {
 	                $score += log($oovProb);
 	            }
 	        }
-            return exp($score);
+            return $score;
         }
     }
 }

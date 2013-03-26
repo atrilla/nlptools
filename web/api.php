@@ -39,20 +39,15 @@ object with the following attributes:
 </ul>
 </p>
 
-<h3>Examples</h3>
+<h3>Example</h3>
 <p>
-Here are some examples using curl:
+Here it is an example using curl:
 </p>
 <p><i>
-$ curl -d "service=sentiment_news&text=joy" http://nlptools.atrilla.net/api/<br/>
+$ curl -d "service=sentiment_news&text=The quick brown fox jumps over the lazy dog"  http://nlptools.atrilla.net/api/<br/>
 {<br/>
-&nbsp;&nbsp;"likelihood":{"NEG":0.00016181229773463,"NEU":0.00020586721564591,"POS":0.00039478878799842},<br/>
-&nbsp;&nbsp;"label":"POS"<br/>
-}<br/><br/>
-$ curl -d "service=sentiment_news&text=terror" http://nlptools.atrilla.net/api/<br/>
-{<br/>
-&nbsp;&nbsp;"likelihood":{"NEG":0.0014563106796117,"NEU":0.00020586721564591,"POS":0.00059218318199763},<br/>
-&nbsp;&nbsp;"label":"NEG"<br/>
+&nbsp;&nbsp;"likelihood":{"NEG":0.27512539950382,"NEU":0.70691780429118,"POS":0.017956796204998},<br/>
+&nbsp;&nbsp;"label":"NEU"<br/>
 }
 </i></p>
 
