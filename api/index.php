@@ -43,9 +43,11 @@ include_once("DB.php");
 include_once(dirname(__FILE__)."/../core/util/dbauth/DBAuthManager.php");
 
 $maxHits = 500;
+$premiumHits = 1111;
 
 //PERMISSIONS
 $granted  = true;
+$premium  = false;
 
 // Check number of queries
 $callerIP = $_SERVER['REMOTE_ADDR'];
@@ -58,9 +60,12 @@ if (DB::isError($db)) {
     // Table schema: IPaddress Hits
     $itExists = $db->getOne("SELECT Hits FROM Users WHERE IPaddress = '$callerIP';");
     if (!is_null($itExists)) {
-        // check range
-        if ($itExists >= $maxHits) {
-            // not allowed, limit reached
+        // check premium IP
+        if ($itExists == $premiumHits) {
+            // OK, proceed
+            $premium = true;
+        } elseif ($itExists >= $maxHits) {
+            // check range not allowed, limit reached
             $granted = false;
         } else {
             // allowed, increase hits
@@ -76,7 +81,7 @@ if (DB::isError($db)) {
 // Check length of query
 if ($granted) {
     $data = RestUtils::processRequest();
-    if ((strlen($data->getTextToProc()) > 0) && (strlen($data->getTextToProc()) < 2000)) {
+    if ($premium || ((strlen($data->getTextToProc()) > 0) && (strlen($data->getTextToProc()) < 2000))) {
         switch($data->getMethod()) {
             case 'post': // right method
                 $serv = $data->getService();

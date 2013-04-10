@@ -1,3 +1,8 @@
+10-Apr-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* api/index.php: premium check.
+
+
 26-Mar-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: prob normalisation wrt the likelihoods. Force to neutral
