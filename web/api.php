@@ -15,8 +15,10 @@ It currently offers the following functionality:
     <li>Sentiment analysis of online news media (service named:
         "sentiment_news"). General-purpose, multiple topics.</li>
 </ul>
-Custom development of other domain-specific solutions are available on
-demand.
+</p>
+<p>
+Custom development of other domain-specific solutions are 
+<a href="mailto:alex@atrilla.net">available on demand</a>.
 </p>
 
 <h2>Usage</h2>
@@ -55,7 +57,12 @@ $ curl -d "service=sentiment_news&text=The quick brown fox jumps over the lazy d
 <p>
 The public API service is for evaluating the toolkit. Input text is limited
 to 2000 characters and a maximum of 500 queries are allowed per IP.
-Higher limits (e.g., for commercial purposes) are available on demand.
+Higher limits (e.g., for commercial purposes) are also available:
+</p>
+<p>
+<center>
+<span data-icon="1" id="mashape-button" data-api="nlptools" data-name="atrilla"></span><script src="https://www.mashape.com/embed/button.js"></script>
+</center>
 </p>
 
 <?php

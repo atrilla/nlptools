@@ -1,3 +1,8 @@
+11-Apr-2013  Alexandre Trilla  <alex@atrilla.net>
+
+* web/api.php: Mashape premium access.
+
+
 10-Apr-2013  Alexandre Trilla  <alex@atrilla.net>
 
 * api/index.php: premium check.
